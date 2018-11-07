@@ -67,8 +67,8 @@ class EUCookieLawPopup extends Extension
 		if (static::config()->get('use_jquery_from_framework')) Requirements::javascript('silverstripe/admin: thirdparty/jquery/jquery.js'); //Include jQuery from the framework only if permitted. Otherwise the developer is assumed to include her own version of jQuery.
 		
 		//jquery-eu-cookie-law-popup library
-		Requirements::javascript('resources/eucookielawpopup/vendor/wimagguc/jquery-eu-cookie-law-popup/js/jquery-eu-cookie-law-popup.js');
-		Requirements::css('resources/eucookielawpopup/vendor/wimagguc/jquery-eu-cookie-law-popup/css/jquery-eu-cookie-law-popup.css');
+		Requirements::javascript('Taitava\EUCookieLawPopup: vendor/wimagguc/jquery-eu-cookie-law-popup/js/jquery-eu-cookie-law-popup.js');
+		Requirements::css('Taitava\EUCookieLawPopup: vendor/wimagguc/jquery-eu-cookie-law-popup/css/jquery-eu-cookie-law-popup.css');
 	}
 	
 	public static function InitializePopup()
@@ -79,7 +79,6 @@ class EUCookieLawPopup extends Extension
 		array_walk($options, function ($option_value) {
 			return Convert::raw2json($option_value);
 		});
-		//Taitava\EUCookieLawPopup: js-templates/eupopup-init.js
-		Requirements::javascriptTemplate('eucookielawpopup/js-templates/eupopup-init.js', $options);
+		Requirements::javascriptTemplate('Taitava\EUCookieLawPopup: js-templates/eupopup-init.js', $options);
 	}
 }

@@ -19,6 +19,7 @@
         "expose": [
             "vendor/wimagguc/jquery-eu-cookie-law-popup/css",
             "vendor/wimagguc/jquery-eu-cookie-law-popup/js"
-        ]
+        ],
+        "installer-name": "eucookielawpopup"
     }
 }
