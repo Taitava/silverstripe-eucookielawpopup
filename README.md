@@ -22,6 +22,11 @@ The popup message will be rendered into that element. If you want to change the 
 
 Create a file *app/_config/eucookielawpopup.yml*:
 ```YAML
+---
+Name: customeucookielawpopup
+After:
+  - '#eucookielawpopup'
+---
 Taitava\EUCookieLawPopup\EUCookieLawPopup:
   popup_element_jquery_selector: '.eupopup'
 ```
@@ -33,6 +38,11 @@ Remember to run */dev/build?flush=all* in your browser after changing the select
 These are the default values:
 
 ```YAML
+---
+Name: customeucookielawpopup
+After:
+  - '#eucookielawpopup'
+---
 Taitava\EUCookieLawPopup\EUCookieLawPopup:
   enabled: true #If true, 'EU cookie law popup' related CSS and JavaScript files are automatically defined as requirements during each page request.
   use_jquery_from_framework: true #If true, adds jquery from SS framework as a requirement automatically. Requires $enabled config value to be true too, otherwise does nothing.
