@@ -47,8 +47,9 @@ Taitava\EUCookieLawPopup\EUCookieLawPopup:
   enabled: true #If true, 'EU cookie law popup' related CSS and JavaScript files are automatically defined as requirements during each page request.
   use_jquery_from_framework: true #If true, adds jquery from SS framework as a requirement automatically. Requires $enabled config value to be true too, otherwise does nothing.
   popup_element_jquery_selector: '.eupopup' #You must have an HTML element matching this jQuery selector located somewhere in your HTML code. For example: <div class="eupopup"></div> The element can be empty.
+  cookie_policy_page_id: false #If this is an integer, the "learn more" link in the popup box will take the user to this page.
   options:
-    cookiePolicyUrl: "/cookie-policy"
+    cookiePolicyUrl: "/cookie-policy" #This option is ignored if cookie_policy_page_id is not false.
     popupPosition: "top"
     colorStyle: "default"
     compactStyle: "false"
