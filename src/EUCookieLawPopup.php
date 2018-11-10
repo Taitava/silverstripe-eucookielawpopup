@@ -2,6 +2,8 @@
 
 namespace Taitava\EUCookieLawPopup;
 
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Control\Director;
 use SilverStripe\Core\Config\Configurable;
 use SilverStripe\Core\Convert;
 use SilverStripe\Core\Extension;
@@ -72,12 +74,22 @@ class EUCookieLawPopup extends Extension
 	
 	public static function InitializePopup()
 	{
+		Requirements::javascriptTemplate('taitava/silverstripe-eucookielawpopup: js-templates/eupopup-init.js', static::prepare_javascript_options());
+	}
+	
+	private static function prepare_javascript_options()
+	{
 		$config = static::config();
 		$options = (array) $config->get('options');
+		
+		//Popup box element selector
 		$options['popup_element_jquery_selector'] = $config->get('popup_element_jquery_selector');
+		
+		//Escape
 		array_walk($options, function ($option_value) {
 			return Convert::raw2json($option_value);
 		});
-		Requirements::javascriptTemplate('taitava/silverstripe-eucookielawpopup: js-templates/eupopup-init.js', $options);
+		
+		return $options;
 	}
 }
