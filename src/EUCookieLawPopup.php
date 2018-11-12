@@ -79,6 +79,17 @@ class EUCookieLawPopup extends Extension
 		Requirements::css('taitava/silverstripe-eucookielawpopup: vendor/wimagguc/jquery-eu-cookie-law-popup/css/jquery-eu-cookie-law-popup.css');
 	}
 	
+	/**
+	 * The window.deleteAllCookies() method is not necessarily needed by the actual cookie consent popup notification, so it's not
+	 * included by default.
+	 *
+	 * The method is included only if you use $RemoveAllCookiesLink variable in your template.
+	 */
+	public static function RequireDeleteAllCookiesJavaScriptMethod()
+	{
+		Requirements::javascript('taitava/silverstripe-eucookielawpopup: js/delete-all-cookies.js');
+	}
+	
 	public static function InitializePopup()
 	{
 		Requirements::javascriptTemplate('taitava/silverstripe-eucookielawpopup: js-templates/eupopup-init.js', static::prepare_javascript_options());

@@ -63,6 +63,12 @@ Taitava\EUCookieLawPopup\EUCookieLawPopup:
     htmlMarkup: "null"
 ```
 
+### 4. Optional template variables
+
+You can use these variables in any of your templates for additional features.
+
+ - $DeleteAllCookiesLink: You can create a link like `<a href="$DeleteAllCookiesLink">Cancel consent on receiving cookies and remove existing cookies</a>`. When the user clicks this link, all cookies created by any javascript libraries are deleted and the cookie law popup box will reappear to notify the user that she hasn't accepted to receive cookies anymore. Note that if you use this variable in your template, an additional JavaScript file will be automatically included as a requirement, so it will increase the page load time a little bit.
+
 ## Future plans
  - Make it possible to configure the `cookiePolicyURL` in the admin panel by selecting a page in SiteConfig.
  - Perhaps a predefined way to initialize JavaScript snippets (that use cookies) *after* the user has accepted to receive cookies. It is possible even now, but requires some work: http://www.wimagguc.com/2018/05/gdpr-compliance-with-the-jquery-eu-cookie-law-plugin/#gdpr_compliance

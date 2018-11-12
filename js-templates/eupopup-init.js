@@ -1,4 +1,9 @@
-$(document).ready(function ()
+jQuery(function ($)
+{
+	InitializeEUCookieLawPopup();
+});
+
+function InitializeEUCookieLawPopup()
 {
 	if ($("$popup_element_jquery_selector").length > 0)
 	{
@@ -17,4 +22,4 @@ $(document).ready(function ()
 			htmlMarkup:                     $htmlMarkup
 		});
 	}
-});
+}

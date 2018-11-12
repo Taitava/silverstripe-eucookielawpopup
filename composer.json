@@ -18,7 +18,8 @@
     "extra": {
         "expose": [
             "vendor/wimagguc/jquery-eu-cookie-law-popup/css",
-            "vendor/wimagguc/jquery-eu-cookie-law-popup/js"
+            "vendor/wimagguc/jquery-eu-cookie-law-popup/js",
+            "js"
         ],
         "installer-name": "eucookielawpopup"
     }
