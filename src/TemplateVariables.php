@@ -32,8 +32,14 @@ class TemplateVariables implements TemplateGlobalProvider
 	public static function get_template_global_variables()
 	{
 		return [
+			'CookiePolicyLink',
 			'DeleteAllCookiesLink',
 		];
+	}
+	
+	public static function CookiePolicyLink()
+	{
+		return EUCookieLawPopup::getCookiePolicyLink();
 	}
 	
 	public static function DeleteAllCookiesLink()

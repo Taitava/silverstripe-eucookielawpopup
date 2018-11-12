@@ -67,6 +67,7 @@ Taitava\EUCookieLawPopup\EUCookieLawPopup:
 
 You can use these variables in any of your templates for additional features.
 
+ - $CookiePolicyLink: An easy way to get the url of the cookie policy page that you have already configured in the YAML configuration using either the 'options.cookiePolicyUrl' option or the 'cookie_policy_page_id' option.
  - $DeleteAllCookiesLink: You can create a link like `<a href="$DeleteAllCookiesLink">Cancel consent on receiving cookies and remove existing cookies</a>`. When the user clicks this link, all cookies created by any javascript libraries are deleted and the cookie law popup box will reappear to notify the user that she hasn't accepted to receive cookies anymore. Note that if you use this variable in your template, an additional JavaScript file will be automatically included as a requirement, so it will increase the page load time a little bit.
 
 ## Future plans

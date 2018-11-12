@@ -95,16 +95,37 @@ class EUCookieLawPopup extends Extension
 		Requirements::javascriptTemplate('taitava/silverstripe-eucookielawpopup: js-templates/eupopup-init.js', static::prepare_javascript_options());
 	}
 	
+	/**
+	 * @param $config
+	 * @return array
+	 */
+	private static function unprepared_javascript_options()
+	{
+		return (array) static::config()->get('options');
+	}
+	
 	private static function prepare_javascript_options()
 	{
 		$config = static::config();
-		$options = (array) $config->get('options');
+		$options = self::unprepared_javascript_options();
 		
 		//Popup box element selector
 		$options['popup_element_jquery_selector'] = $config->get('popup_element_jquery_selector');
 		
 		//Cookie policy page URL
-		$cookie_policy_page_id = $config->get('cookie_policy_page_id');
+		$options['cookiePolicyUrl'] = static::getCookiePolicyLink(); //This returns either the same value which $options['cookiePolicyUrl'] already contains, or an overriding value.
+		//Escape
+		array_walk($options, function ($option_value) {
+			return Convert::raw2json($option_value);
+		});
+		
+		return $options;
+	}
+	
+	public static function getCookiePolicyLink()
+	{
+		$options = self::unprepared_javascript_options();
+		$cookie_policy_page_id = static::config()->get('cookie_policy_page_id');
 		if ($cookie_policy_page_id > 0)
 		{
 			/** @var SiteTree $cookie_policy_page */
@@ -112,15 +133,11 @@ class EUCookieLawPopup extends Extension
 			if (is_object($cookie_policy_page) && $cookie_policy_page->isPublished())
 			{
 				//Override the static 'cookiePolicyUrl' option, but only if we found an actually existing (and published) cookie policy page
-				$options['cookiePolicyUrl'] = $cookie_policy_page->Link();
+				return $cookie_policy_page->Link();
 			}
 		}
 		
-		//Escape
-		array_walk($options, function ($option_value) {
-			return Convert::raw2json($option_value);
-		});
-		
-		return $options;
+		//Return the static url
+		return $options['cookiePolicyUrl'];
 	}
 }
