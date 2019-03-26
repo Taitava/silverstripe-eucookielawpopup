@@ -1,7 +1,7 @@
 {
     "name": "taitava/silverstripe-eucookielawpopup",
     "description": "A wrapper for wimagguc/jquery-eu-cookie-law-popup for easy usage in SilverStripe CMS.",
-    "type": "silverstripe-vendormodule",
+    "type": "silverstripe-module",
     "keywords": ["silverstripe"],
 	"license": "BSD-3-Clause",
     "authors": [
@@ -12,15 +12,10 @@
     ],
     "require":
     {
-        "silverstripe/framework": "^4.0",
-        "silverstripe/cms": "^4.0"
+        "silverstripe/framework": "^3.2",
+        "silverstripe/cms": "^3.2"
     },
     "extra": {
-        "expose": [
-            "vendor/wimagguc/jquery-eu-cookie-law-popup/css",
-            "vendor/wimagguc/jquery-eu-cookie-law-popup/js",
-            "js"
-        ],
         "installer-name": "eucookielawpopup"
     }
 }

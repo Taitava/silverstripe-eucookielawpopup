@@ -4,7 +4,7 @@ Uses jQuery and [wimagguc/jquery-eu-cookie-law-popup](https://github.com/wimaggu
 
 ## Requirements
 
-This module requires SilverStripe 4.x framework. The CMS module is also required.
+This module requires SilverStripe 3 framework (tested with SS 3.7.3). The CMS module is also required.
 
 ## Installation
 
@@ -27,7 +27,7 @@ Name: customeucookielawpopup
 After:
   - '#eucookielawpopup'
 ---
-Taitava\EUCookieLawPopup\EUCookieLawPopup:
+EUCookieLawPopup:
   popup_element_jquery_selector: '.eupopup'
 ```
 
@@ -43,7 +43,7 @@ Name: customeucookielawpopup
 After:
   - '#eucookielawpopup'
 ---
-Taitava\EUCookieLawPopup\EUCookieLawPopup:
+EUCookieLawPopup:
   enabled: true #If true, 'EU cookie law popup' related CSS and JavaScript files are automatically defined as requirements during each page request.
   use_jquery_from_framework: true #If true, adds jquery from SS framework as a requirement automatically. Requires $enabled config value to be true too, otherwise does nothing.
   popup_element_jquery_selector: '.eupopup' #You must have an HTML element matching this jQuery selector located somewhere in your HTML code. For example: <div class="eupopup"></div> The element can be empty.

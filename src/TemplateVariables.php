@@ -1,12 +1,6 @@
 <?php
 
 
-namespace Taitava\EUCookieLawPopup;
-
-
-use SilverStripe\View\Requirements;
-use SilverStripe\View\TemplateGlobalProvider;
-
 class TemplateVariables implements TemplateGlobalProvider
 {
 	

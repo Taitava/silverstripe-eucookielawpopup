@@ -1,7 +1,7 @@
 ---
 Name: eucookielawpopup
 ---
-Taitava\EUCookieLawPopup\EUCookieLawPopup:
+EUCookieLawPopup:
   options:
     cookiePolicyUrl: "/cookie-policy"
     popupPosition: "top"
@@ -16,6 +16,6 @@ Taitava\EUCookieLawPopup\EUCookieLawPopup:
     autoAcceptCookiePolicy: "false"
     htmlMarkup: "null"
 
-SilverStripe\CMS\Model\SiteTree:
+SiteTree:
   extensions:
-    - Taitava\EUCookieLawPopup\EUCookieLawPopup
+    - EUCookieLawPopup
